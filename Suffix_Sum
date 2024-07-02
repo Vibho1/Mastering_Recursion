@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long func(vector<int>& vec, long long sum, int i, int m) {
+    if(i < 0) return sum;
+    if (i == vec.size() - m - 1) return sum;
+    
+    sum += vec[i];
+    
+    return func(vec, sum, i - 1, m);
+}
+
+int main() {
+    long long n, m;
+    cin >> n >> m;
+    vector<int> vec(n);
+    for(int i = 0; i < n; i++) {
+        cin >> vec[i];
+    }
+    cout << func(vec, 0, vec.size() - 1, m) << endl;
+}
