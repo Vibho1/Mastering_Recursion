@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void func(int n, int forward, int stars) {
+    if(n == 0) return;
+    
+    func(n - 1, forward + 1, stars -1);
+    
+    for(int j = 0; j < forward; j++) {
+        cout << ' ';
+    }
+    for(int i = forward; i < stars; i++) {
+        cout << '*';
+    }
+    
+    cout << endl;
+    
+}
+
+int main() {
+    int n;
+    cin >> n;
+    func(n, 0, (2 * n) - 1);
+    
+    return 0;
+}
