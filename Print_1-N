@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+void func(int n, int curr) {
+    if(curr == n + 1) return;
+    
+    cout << curr << endl;
+    func(n, curr + 1);
+}
+
+int main() {
+    
+    int n;
+    cin >> n;
+    
+    func(n, 1);
+}
