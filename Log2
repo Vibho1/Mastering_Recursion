@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int func(long long n, int ans) {
+    if(n <= 1) return ans;
+
+    return func(n/2, ans + 1);
+}
+
+int main() {
+    long long n;
+    cin >> n;
+
+    cout << func(n, 0) << endl;
+}
