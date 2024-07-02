@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+double func(vector<int>& vec, long long sum, int i) {
+    if(i == vec.size()) return (double)sum / (double)vec.size();
+    
+    sum += vec[i];
+    return func(vec, sum, i + 1);
+}
+
+int main() {
+    long long n;
+    cin >> n;
+    vector<int> vec(n);
+    
+    for(int i = 0; i < n; i++) {
+        cin >> vec[i];
+    }
+    
+    double ans = func(vec, 0, 0);
+    
+    cout << fixed << setprecision(6); // Set precision for floating-point output
+
+    cout << ans << endl;
+}
