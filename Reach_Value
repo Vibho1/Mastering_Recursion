@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Recursive function to compute binomial coefficient nCr
+
+string helper(long long n, long long curr) {
+    if(curr > n) return "NO";
+    if(curr == n) return "YES";
+    if(helper(n, curr * 10) == "YES" || helper(n, curr * 20) == "YES") return "YES";
+    else return "NO";
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    
+    while(t--) {
+        long long n;
+        cin >> n;
+        cout << helper(n, 1);
+        cout << endl;
+    }
+}
